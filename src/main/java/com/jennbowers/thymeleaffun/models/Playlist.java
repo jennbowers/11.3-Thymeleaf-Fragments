@@ -18,6 +18,8 @@ public class Playlist {
     @OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
     private List<Song> songs;
     private String owner;
+
+    @Column(name = "playlist_order")
     private int order;
 
     public Playlist() {}
@@ -34,9 +36,9 @@ public class Playlist {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+//    public void setId(long id) {
+//        this.id = id;
+//    }
 
     public String getTitle() {
         return title;

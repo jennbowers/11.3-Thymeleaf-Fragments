@@ -9,7 +9,12 @@
     <div th:include="navbar :: navbar"></div>
     <div class="container">
         <h1>Hello Spring Thymeleaf!</h1>
+
+        <div th:each="playlist : ${playlists}">
+            <a href="#" th:text="${playlist.title}"></a>
+        </div>
     </div>
+
 
     <span th:include="includes :: js"></span>
 </body>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>About</title>
+    <span th:include="includes :: css"></span>
+</head>
+<body>
+<div th:include="navbar :: navbar"></div>
+<div class="container">
+    <form action="/createSong" method="post">
+        <div class="form-group">
+            <label for="title">Song Title: </label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Song Title"/>
+        </div>
+        <div class="form-group">
+            <label for="artist">Song Artist: </label>
+            <input type="text" class="form-control" id="artist" name="artist" placeholder="Artist Name"/>
+        </div>
+        <div class="form-group">
+            <label for="album">Song Album: </label>
+            <input type="text" class="form-control" id="album" name="album" placeholder="Album Name"/>
+        </div>
+        <div class="form-group">
+            <label for="playlist">Playlist: </label>
+            <select class="form-control" id="playlist" name="playlist">
+                <option>------</option>
+                <option th:text="${playlist.title}" th:each="playlist : ${playlists}" th:value="${playlist.id}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Add" class="btn btn-primary"/>
+        </div>
+
+    </form>
+</div>
+
+
+
+<span th:include="includes :: js"></span>
+</body>
+</html>

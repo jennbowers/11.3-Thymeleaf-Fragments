@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>About</title>
+    <span th:include="includes :: css"></span>
+</head>
+<body>
+    <div th:include="navbar :: navbar"></div>
+    <div class="container">
+        <form action="/createPlaylist" method="post">
+            <div class="form-group">
+                <label for="title">Playlist Title: </label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Playlist Title"/>
+            </div>
+            <div class="form-group">
+                <label for="owner">Playlist Owner: </label>
+                <input type="text" class="form-control" id="owner" name="owner" placeholder="Owner Name"/>
+            </div>
+            <div class="form-group">
+                <label for="order">Playlist Order: </label>
+                <input type="text" class="form-control" id="order" name="order" value="0"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary"/>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <span th:include="includes :: js"></span>
+</body>
+</html>
